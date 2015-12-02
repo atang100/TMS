@@ -11,7 +11,6 @@ class TeamController {
         String  userId = params.userId
         String teamId = params.teamId
 
-
     }
 
     def removeMemberFromTeam(){

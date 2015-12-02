@@ -5,8 +5,8 @@ import grails.transaction.Transactional
 @Transactional
 class TeamService {
 
-    //instructor adds
-    def addMemberToTeam(String userId, String teamId) {
+    //instructor adds member to teach
+    def acceptNewStudent(String userId, String teamId) {
         //get used Id as paramter and returns object
         StudentAccount studentAccount = UserAccount.get(userId);
 
@@ -16,17 +16,9 @@ class TeamService {
 
     }
 
-    def removeMemberFromTeam(String userId, String teamId) {
-        //get used Id as paramter and returns object
-        StudentAccount studentAccount = UserAccount.get(userId);
 
-        Team team = Team.get(teamId);
-        team.removeFromStudentAccount(studentAccount);
-        team.save();
-    }
-
-    def createTeam(String teamName, String teamId, boolean isComplete, String teamPoolId) {
-        Team team = new Team(teamName:teamName, id:teamId, isComplete:isComplete);
+    def createTeam(String teamName, boolean isComplete, String teamPoolId) {
+        Team team = new Team(teamName:teamName, isComplete:isComplete);
         TeamPool teamPool = TeamPool.get(teamPoolId)
         teamPool.addToTeam(team)
         teamPool.save()
@@ -42,7 +34,14 @@ class TeamService {
         StudentAccount studentAccount = UserAccount.get(userId);
 
         Team team = Team.get(teamId);
-        team.addToStudentAccount(studentAccount);
-        team.save();
+        TeamPool teamPool = TeamPool.findByTeam(team)
+
+        if(team.teamSize() < teamPool.maxStudent){
+            team.addToStudentAccount(studentAccount);
+            team.teamSize()++
+            team.save();
+
+        }
+
     }
 }
