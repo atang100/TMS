@@ -2,7 +2,7 @@ package tms
 
 class StudentAccount {
 
-    static hasMany = [teamPool: TeamPool]
+    //static hasMany = [teamPool: TeamPool]
 
     static constraints = {
     }
