@@ -7,14 +7,8 @@ class TeamController {
 
 
     //NEVER put stuff in parameters unless if private
-    def addMemberToTeam(){
+    def acceptNewStudent(){
         String  userId = params.userId
-        String teamId = params.teamId
-
-    }
-
-    def removeMemberFromTeam(){
-        String userId = params.userId
         String teamId = params.teamId
 
     }
@@ -24,11 +18,20 @@ class TeamController {
         String teamId = params.teamId
         boolean isComplete = params.team
         String teamPoolId = params.teamName
+
+        redirect(controller: "")
     }
 
     def quitTeam(){
 
         String teamId = params.teamId
         StudentAccount studentAccount = params.studentAccount
+    }
+
+
+    def joinTeam() {
+        String userId = params.userId
+        String teamId = params.teamId
+
     }
 }
