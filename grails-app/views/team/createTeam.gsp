@@ -1,9 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Andy
-  Date: 12/1/2015
-  Time: 8:35 PM
---%>
+
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -11,7 +6,11 @@
     <title></title>
 </head>
 
-<body>
+<g:form action="createTeam" controller="team" method="post" name="createTeam" id="myCreateTeam">
+    <g:textField placeholder="teamName" name="teamName" value="">  </g:textField>
+    <g:textField placeholder = "teamId" name="teamId" value="" >  </g:textField>
+    <g:submitButton name="submitButton" value="login" />
 
-</body>
+</g:form>
+
 </html>

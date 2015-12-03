@@ -32,6 +32,5 @@ class TeamController {
     def joinTeam() {
         String userId = params.userId
         String teamId = params.teamId
-
     }
 }

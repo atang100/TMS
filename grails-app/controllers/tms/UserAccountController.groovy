@@ -47,11 +47,11 @@ class UserAccountController {
 
     }
     def showParameter(){
-        render(template: "register")
+
 
     }
-    def visualizeStudent(){
-        render(template: "register")
+    def joinTeam(){
+
 
     }
 
