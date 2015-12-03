@@ -1,6 +1,6 @@
 package tms
 
-class StudentAccount {
+class StudentAccount extends UserAccount{
 
     //static hasMany = [teamPool: TeamPool]
 

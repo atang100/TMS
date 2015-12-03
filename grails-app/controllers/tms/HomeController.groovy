@@ -6,7 +6,7 @@ class HomeController {
 
         //navigate user to login
         if (session.user == null){
-            redirect(controller:"login")
+            redirect(controller:"UserAccount")
         }else{
             def userType
             if(session.user.instanceOf(InstructorAccount)){

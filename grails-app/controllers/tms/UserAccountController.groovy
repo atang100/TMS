@@ -11,7 +11,7 @@ class UserAccountController {
             redirect(controller: "Home")
         } else {
             flash.message = "Sorry, ${params.username}. Please try again."
-            render(view: "login")
+            render(view: "index")
         }
     }
 
@@ -39,7 +39,7 @@ class UserAccountController {
             String emailAddress = params.emailAddress
             UserAccountService.registerStudentAccount(username,password,firstName,lastName,emailAddress)
         }
-
+        render (view: "index")
     }
 
     def showRegister(){
