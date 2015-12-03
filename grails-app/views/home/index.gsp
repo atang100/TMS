@@ -1,4 +1,9 @@
-
+<%--
+  Created by IntelliJ IDEA.
+  User: Andy
+  Date: 12/1/2015
+  Time: 9:20 PM
+--%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
@@ -7,16 +12,11 @@
 </head>
 
 <body>
-<g:if test="${userType == 'InstructorLayout'}">
-    Login instructor
-
+<g:if test="${userType == 'Instructor'}">
+    <g:render template="/home/instructorLayout" />
 </g:if>
 <g:else >
-    Login student
-
-    <g:link  controller="Home" action="joinTeam">
-        Join Team
-    </g:link>
+    <g:render template="/home/studentLayout" />
 </g:else>
 
 </body>

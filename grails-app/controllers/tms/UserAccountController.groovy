@@ -3,7 +3,7 @@ package tms
 class UserAccountController {
     def UserAccountService
     def login() {
-        def user = UserAccount.findByUsername(params.username)
+        def user = UserAccount.findByUsername((String)params.username)
         if (user && (user.password == params.password)) {
             session.user = user
             flash.message = "Hello ${user.firstName}"
