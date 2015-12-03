@@ -8,10 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title></title>
+    <title> User Account</title>
 </head>
 
 <body>
-
+<g:render template="/userAccount/login" />
 </body>
 </html>

@@ -20,19 +20,31 @@ class UserAccountController {
         flash.message = "Logged out."
     }
 
-    def registerInstructor() {
-        String username = params.username
-        String password = params.password
-        String firstName = params.firstName
-        String lastName = params.lastName
-        String emailAddress = params.emailAddress
-    }
-    def registerStudent() {
-        String username = params.username
-        String password = params.password
-        String firstName = params.firstName
-        String lastName = params.lastName
-        String emailAddress = params.emailAddress
+    def register() {
+        if(params.registrationType == "Instructor"){
+
+            String username = params.username
+            String password = params.password
+            String firstName = params.firstName
+            String lastName = params.lastName
+            String emailAddress = params.emailAddress
+            UserAccountService.registerInstructorAccount(username,password,firstName,lastName,emailAddress)
+        }else{
+
+            String username = params.username
+            String password = params.password
+            String firstName = params.firstName
+            String lastName = params.lastName
+            String emailAddress = params.emailAddress
+            UserAccountService.registerStudentAccount(username,password,firstName,lastName,emailAddress)
+        }
 
     }
+
+    def showRegister(){
+        println ("FUCKBOI");
+        render(template: "register")
+
+    }
+
 }
