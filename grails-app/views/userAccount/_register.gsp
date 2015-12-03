@@ -4,7 +4,7 @@
     <g:textField placeholder = "Password" name="password" value="" >  </g:textField>
     <g:textField placeholder="firstName" name="firstName" value="">  </g:textField>
     <g:textField placeholder = "lastName" name="lastName" value="" >  </g:textField>
-    <g:textField placeholder="email" name="email" value="">  </g:textField>
+    <g:textField placeholder="email" name="emailAddress" value="">  </g:textField>
 
     <g:select name="registrationType" from="${['Instructor', 'Student']}"/>
     <g:submitButton name="submitButton" value="register" />
