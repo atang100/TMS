@@ -10,14 +10,13 @@ class HomeController {
         }else{
             def userType
             if(session.user.instanceOf(InstructorAccount)){
-                userType = "agentLayout"
+                userType = "InstructorLayout"
             }else if (session.user.instanceOf(StudentAccount)){
-                userType = "ownerLayout"
+                userType = "StudentLayout"
             }
             render (view:"index", model: [userType:userType])
         }
     }
-
 
 
 }

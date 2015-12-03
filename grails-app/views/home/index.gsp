@@ -8,10 +8,16 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title></title>
+    <title>Homepage</title>
 </head>
 
 <body>
+<g:if test="${userType == 'Instructor'}">
+
+</g:if>
+<g:else >
+    Dev mode - debug: $someDebug
+</g:else>
 
 </body>
 </html>

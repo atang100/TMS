@@ -8,6 +8,7 @@ class UserAccountController {
             session.user = user
             flash.message = "Hello ${user.firstName}"
             //Need to redirect somewhere
+            redirect(controller: "Home")
         } else {
             flash.message = "Sorry, ${params.username}. Please try again."
             render(view: "login")
@@ -42,9 +43,17 @@ class UserAccountController {
     }
 
     def showRegister(){
-        println ("FUCKBOI");
         render(template: "register")
 
     }
+    def showParameter(){
+        render(template: "register")
+
+    }
+    def visualizeStudent(){
+        render(template: "register")
+
+    }
+
 
 }
