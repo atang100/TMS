@@ -17,7 +17,7 @@ class UserAccountController {
 
     def logout(){
         session.user = null
-        redirect(controller: "login", action: "index")
+        redirect(controller: "UserAccount", action: "login")
         flash.message = "Logged out."
     }
 
@@ -51,7 +51,7 @@ class UserAccountController {
 
     }
     def joinTeam(){
-
+        redirect(controller: "Team", action: "joinTeam")
 
     }
 

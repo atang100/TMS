@@ -4999,3 +4999,15 @@ n:1826:grails/util/BuildSettings$getClassesDir$2
 n:2009:java_io_File$createTempFile$6
 n:1385:java_io_File$deleteOnExit$7
 n:1489:java_io_File$delete$8
+y:22970:org/grails/plugins/web/rest/api/ControllersRestApi
+y:20640:org/codehaus/groovy/grails/plugins/web/api/ControllersApi
+n:1820:grails/util/BuildSettings$getBaseDir$3
+n:1408:java_io_File$getCanonicalPath$9
+y:140097:org/codehaus/groovy/transform/stc/StaticTypeCheckingVisitor
+y:15965:org/codehaus/groovy/transform/stc/GroovyTypeCheckingExtensionSupport
+y:53461:org/codehaus/groovy/transform/stc/StaticTypeCheckingSupport
+y:13601:org/codehaus/groovy/classgen/AnnotationVisitor
+n:1919:org/apache/log4j/DefaultThrowableRenderer
+n:200:org/apache/log4j/spi/ThrowableRenderer
+n:2302:org/codehaus/groovy/grails/project/compiler/GrailsProjectWatcher$2
+n:375:org/codehaus/groovy/grails/project/compiler/GrailsProjectWatcher$ClassUpdate
