@@ -38,10 +38,12 @@ class TeamController {
 
 
     def joinTeam() {
-        String userId = params.userId
+        String userId = session.user.id
         String teamId = params.teamId
-        render (view: "teamList")
+        redirect(controller: "Home")
     }
+
+
 
     def viewTeamList() {
         List<Team> teams = Team.findAll()

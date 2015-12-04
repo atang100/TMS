@@ -1,4 +1,4 @@
-<g:link  controller="UserAccount" action="joinTeam">
+<g:link  controller="Team" action="viewTeamList">
     join Team
 </g:link>
 
