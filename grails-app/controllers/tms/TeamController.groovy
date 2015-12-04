@@ -3,7 +3,10 @@ package tms
 class TeamController {
     def TeamService
 
-    def index() {}
+    def index() {
+
+        render (view:"teamList")
+    }
 
 
     //NEVER put stuff in parameters unless if private
@@ -32,5 +35,6 @@ class TeamController {
     def joinTeam() {
         String userId = params.userId
         String teamId = params.teamId
+        render (view: "teamList")
     }
 }
