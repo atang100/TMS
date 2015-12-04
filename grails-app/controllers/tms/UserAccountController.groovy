@@ -54,8 +54,4 @@ class UserAccountController {
         redirect(controller: "Team", action: "joinTeam")
 
     }
-
-    def visualizeStudentTeam() {
-        redirect(controller: "Team", action: "visualizeStudentTeam")
-    }
 }

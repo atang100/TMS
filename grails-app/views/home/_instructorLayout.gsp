@@ -6,7 +6,7 @@
     View Team Info
 </g:link>
 <br>
-<g:link  controller="Team" action="teamList">
+<g:link  controller="Team" action="viewTeamList">
     View Team List
 </g:link>
 <br>
@@ -14,24 +14,12 @@
     <p>${team.teamName}</p>
 </g:each>
 
-
-
-
 %{--<g:link  controller="UserAccount" action="showParameter">--}%
-    %{--Create Team--}%
+%{--Accept New Student--}%
 %{--</g:link>--}%
-
-<g:link  controller="UserAccount" action="visualizeStudentTeam">
-    show student teams
+<br>
+<g:link  controller="UserAccount" action="logout">
+    logout
 </g:link>
-
-%{--<g:link  controller="UserAccount" action="showParameter">--}%
-    %{--Accept New Student--}%
-%{--</g:link>--}%
-
-%{--<g:link  controller="UserAccount" action="logout">--}%
-    %{--logout--}%
-%{--</g:link>--}%
-
 
 

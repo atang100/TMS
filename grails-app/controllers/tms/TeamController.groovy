@@ -41,9 +41,10 @@ class TeamController {
         render (view: "teamList")
     }
 
-    def visualizeStudentTeam() {
-        //def teams = Team.list()
-        //[teams:teams]
-        render (view: "teamList")
+    def viewTeamList() {
+        List<Team> teams = Team.findAll()
+        Map model = [:]
+        model.teams = teams
+        render (view: "teamList", model: model)
     }
 }
