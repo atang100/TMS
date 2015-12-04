@@ -33,4 +33,9 @@ class TeamController {
         String userId = params.userId
         String teamId = params.teamId
     }
+
+    def visualizeTeamController() {
+        def teams = Team.list()
+        [teams:teams]
+    }
 }
