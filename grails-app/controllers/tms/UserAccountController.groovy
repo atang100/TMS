@@ -55,5 +55,7 @@ class UserAccountController {
 
     }
 
-
+    def visualizeStudentTeam() {
+        redirect(controller: "Team", action: "visualizeStudentTeam")
+    }
 }

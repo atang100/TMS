@@ -22,7 +22,7 @@
     %{--Create Team--}%
 %{--</g:link>--}%
 
-<g:link  controller="TeamController" action="visualizeStudentTeam">
+<g:link  controller="UserAccount" action="visualizeStudentTeam">
     show student teams
 </g:link>
 

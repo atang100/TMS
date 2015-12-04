@@ -38,8 +38,9 @@ class TeamController {
         render (view: "teamList")
     }
 
-    def visualizeTeamController() {
-        def teams = Team.list()
-        [teams:teams]
+    def visualizeStudentTeam() {
+        //def teams = Team.list()
+        //[teams:teams]
+        render (view: "teamList")
     }
 }
