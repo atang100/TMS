@@ -7,9 +7,9 @@
 <table border="1">
 
 
-    <td>IsComplete</td>
-    <td>Date</td>
-    <g:each in="${studentAccount}" var="studentAccount">
+    <td>Student Names</td>
+    <td>Accept</td>
+    <g:each in="${studentAccounst}" var="studentAccount">
         <tr>
             <td>${studentAccount.studentName}</td>
             <td><g:form action="joinTeam" controller="Team"
