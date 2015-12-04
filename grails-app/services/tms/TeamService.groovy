@@ -17,9 +17,9 @@ class TeamService {
     }
 
 
-    def createTeam(String teamName, boolean isComplete, String teamPoolId) {
-        Team team = new Team(teamName:teamName, isComplete:isComplete);
-        TeamPool teamPool = TeamPool.get(teamPoolId)
+    def createTeam(String teamName, boolean isComplete, Long teamPoolId) {
+        Team team = new Team(teamName:teamName, isComplete:isComplete)
+        TeamPool teamPool = TeamPool.findById(teamPoolId)
         teamPool.addToTeam(team)
         teamPool.save()
     }

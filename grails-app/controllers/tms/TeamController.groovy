@@ -17,15 +17,17 @@ class TeamController {
     }
 
     def createTeam(){
-        String teamName = params.teamName
-        String teamId = params.teamId
-        boolean isComplete = params.team
-        String teamPoolId = params.teamName
         if(request.method == 'POST'){
-            TeamService.createTeam(teamName, isComplete, teamPoolId)
+            String teamName = params.teamName
+            String teamId = params.teamId
+            boolean isComplete = false
+            Long teamPoolId = Long.valueOf(params.teamPoolId)
+
+            TeamService.createTeam(teamName, isComplete,teamPoolId)
             redirect(controller: "Home")
         }
-        render(view: "createTeam")
+        def teamPoolListId = TeamPool.findAll()
+        render(view: "createTeam" ,model: [teamPoolListId:teamPoolListId])
     }
 
     def quitTeam(){
