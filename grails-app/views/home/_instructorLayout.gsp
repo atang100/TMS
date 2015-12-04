@@ -2,13 +2,16 @@
     Create Team
 </g:link>
 <br>
-<g:link  controller="Team" action="teamInfo">
-    View Team Info
-</g:link>
-<br>
+
 <g:link  controller="Team" action="viewTeamList">
     View Team List
 </g:link>
+<br>
+
+<g:link  controller="Team" action="viewNewStudents">
+    Accept New Students
+</g:link>
+
 <br>
 <g:each in="${teams}" var="team">
     <p>${team.teamName}</p>

@@ -40,15 +40,33 @@ class TeamController {
     def joinTeam() {
         String userId = session.user.id
         String teamId = params.teamId
+        TeamService.joinTeam( userId,  teamId)
         redirect(controller: "Home")
     }
+    def viewTeamInfo() {
+        List<Team> teams = Team.findAll()
+        Map model = [:]
+        model.teams = teams
+        render (view: "teamInfo", model: model)
+    }
+    def viewParameters() {
+        render (view: "teamParameters")
+    }
 
-
-
+    def setUpParameters() {
+        redirect(controller: "Home")
+    }
     def viewTeamList() {
         List<Team> teams = Team.findAll()
         Map model = [:]
         model.teams = teams
         render (view: "teamList", model: model)
+    }
+
+    def viewNewStudents() {
+        List<StudentAccount> studentAccount = StudentAccount.findAll()
+        Map model = [:]
+        model.studentAccount = studentAccount
+        render (view: "acceptNewStudents", model: model)
     }
 }

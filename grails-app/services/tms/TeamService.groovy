@@ -34,7 +34,10 @@ class TeamService {
         StudentAccount studentAccount = UserAccount.get(userId);
 
         Team team = Team.get(teamId);
+
+        //code breaks here
         TeamPool teamPool = TeamPool.findByTeam(team)
+
 
         if(team.teamSize() < teamPool.maxStudent){
             team.addToStudentAccount(studentAccount);

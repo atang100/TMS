@@ -7,15 +7,21 @@
 </head>
 <body>
     <table border="1">
+        <p>Set Up Parameters</p>
+        <td>TeamName</td>
+        <td>TeamSize</td>
+        <td>IsComplete</td>
+        <td>Date</td>
         <g:each in="${teams}" var="team">
             <tr>
                 <td>${team.teamName}</td>
                 <td>${team.teamSize}</td>
                 <td>${team.isComplete}</td>
-                <td><g:form action="joinTeam" controller="Team"
-                            name="Join Team" >
+                <td>${date}</td>
+                <td><g:form action="viewParameters" controller="Team"
+                            name="Team Parameters" >
                     <g:textField style = "display:none" name = "teamId" value = "${team.id}">  </g:textField>
-                    <g:submitButton name="submitButton" value="Join Team" />
+                    <g:submitButton name="submitButton" value="Set Up Parameters" />
 
                 </g:form></td>
            </tr>
