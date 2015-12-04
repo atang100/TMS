@@ -48,3 +48,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+*.iml
+*.index
+*.class
+*.tld
+*.bytes
