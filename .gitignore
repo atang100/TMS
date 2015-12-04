@@ -48,3 +48,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+grails-app/views/home/index.gsp
+grails-app/views/home/index.gsp
+*.gsp
+web-app/WEB-INF/tld/c.tld
