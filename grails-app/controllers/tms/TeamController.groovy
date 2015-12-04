@@ -20,9 +20,12 @@ class TeamController {
         String teamName = params.teamName
         String teamId = params.teamId
         boolean isComplete = params.team
-        String teamPoolId = params.teamName
-
-        redirect(controller: "")
+        //String teamPoolId = params.teamName
+        if(request.method == 'POST'){
+            TeamService.createTeam(teamName, isComplete, 1)
+            redirect(controller: "Home")
+        }
+        render(view: "createTeam")
     }
 
     def quitTeam(){

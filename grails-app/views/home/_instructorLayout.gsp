@@ -1,19 +1,18 @@
-<g:link  controller="Home" action="createTeam">
+<g:link  controller="Team" action="createTeam">
     Create Team
 </g:link>
-
-<g:link  controller="Home" action="modifyTeamProperties">
-    Modify Team Properties
+<br>
+<g:link  controller="Team" action="teamInfo">
+    View Team Info
 </g:link>
-
-<g:link  controller="Home" action="viewTeams">
-    View Teams
+<br>
+<g:link  controller="Team" action="teamList">
+    View Team List
 </g:link>
-
-<g:link  controller="Home" action="modifyTeamMembers">
-    Modify Team Members
-</g:link>
-
+<br>
+<g:each in="${teams}" var="team">
+    <p>${team.teamName}</p>
+</g:each>
 
 
 
