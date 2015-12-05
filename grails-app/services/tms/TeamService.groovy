@@ -33,19 +33,13 @@ class TeamService {
     def joinTeam(String userId, String teamId) {
         StudentAccount studentAccount = UserAccount.get(userId);
 
-        Team team = Team.get(Long.valueOf(teamId));
+        Team team = Team.get(teamId as Long)
+        TeamPool teamPool = team.getTeamPool()
 
-        //code breaks here
-        //TeamPool teamPool = TeamPool.findByTeam(team)
-        TeamPool teamPool = TeamPool.findByTeam(team)
-
-
-        if(team.teamSize() < teamPool.maxStudent){
-            team.addToStudentAccount(studentAccount);
-            team.teamSize()++
-            team.save();
-
+        if(team.teamSize < teamPool.maxStudent){
+            team.addToStudentAccount(studentAccount)
+            team.teamSize++
+            team.save()
         }
-
     }
 }

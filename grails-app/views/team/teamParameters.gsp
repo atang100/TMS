@@ -14,12 +14,11 @@
 <body>
 <g:form action="setUpParameters" controller="Team" method="post"
         name="setUpParameters" id="mysetUpParameters">
-    <g:textField placeholder="CourseCode" name="CourseCode">  </g:textField>
-    <g:textField placeholder = "minimum" name="minimum" >  </g:textField>
-    <g:textField placeholder="maximum" name="maximum">  </g:textField>
-    <g:textField placeholder = "deadLine" name="deadLine" >  </g:textField>
-    <g:submitButton name="submitButton" value="SetUpParameters" />
-
+    <g:textField placeholder="CourseCode" name="CourseCode" value="${teamPool.courseCode}"></g:textField>
+    <g:textField placeholder="minimum" name="minimum" value="${teamPool.minStudent}"></g:textField>
+    <g:textField placeholder="maximum" name="maximum" value="${teamPool.maxStudent}"></g:textField>
+    <g:textField placeholder="YYYY-MM-DD" name="deadLine" value="${teamPool.deadlineForTeamCreation}"></g:textField>
+    <g:submitButton name="submitButton" value="Update Parameters" />
 </g:form>
 </body>
 </html>

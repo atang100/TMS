@@ -2,6 +2,7 @@ package tms
 
 class UserAccountController {
     def UserAccountService
+
     def login() {
         def user = UserAccount.findByUsername((String)params.username)
         if (user && (user.password == params.password)) {
@@ -46,10 +47,11 @@ class UserAccountController {
         render(template: "register")
 
     }
+
     def showParameter(){
 
-
     }
+
     def joinTeam(){
         redirect(controller: "Team", action: "joinTeam")
 

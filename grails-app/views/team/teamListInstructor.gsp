@@ -6,25 +6,37 @@
     <title></title>
 </head>
 <body>
-    <table border="1">
-        <p>Set Up Parameters</p>
-        <td>TeamName</td>
-        <td>TeamSize</td>
-        <td>IsComplete</td>
-        <td>Date</td>
-        <g:each in="${teams}" var="team">
-            <tr>
-                <td>${team.teamName}</td>
-                <td>${team.teamSize}</td>
-                <td>${team.isComplete}</td>
-                <td>${date}</td>
-                <td><g:form action="viewParameters" controller="Team"
-                            name="Team Parameters" >
-                    <g:textField style = "display:none" name = "teamId" value = "${team.id}">  </g:textField>
-                    <g:submitButton name="submitButton" value="Set Up Parameters" />
-                </g:form></td>
-           </tr>
-        </g:each>
-    </table>
+    <g:each in="${teamPoolList}" var="teamPool">
+        <p>Team Pool ${teamPool.id}</p>
+        <g:form action="viewParameters" controller="Team"
+                name="TeamPool Parameters" >
+            <g:textField style = "display:none" name = "teamPoolId" value = "${teamPool.id}">  </g:textField>
+            <g:submitButton name="submitButton" value="Set Up Parameters" />
+        </g:form>
+
+        <table border="1">
+            <td>TeamName</td>
+            <td>TeamSize</td>
+            <td>IsComplete</td>
+            <td>Student Member</td>
+            %{--<td>Date</td>--}%
+            <g:each in="${teamPool.team}" var="team">
+                <tr>
+                    <td>${team.teamName}</td>
+                    <td>${team.teamSize}</td>
+                    <td>${team.isComplete}</td>
+                    <td>
+                        <ul>
+                            <g:each in="${team.studentAccount}" var="student">
+                                <li>${student.username}
+                                </li>
+                            </g:each>
+                        </ul>
+                    </td>
+                    %{--<td>${date}</td>--}%
+                </tr>
+            </g:each>
+        </table>
+    </g:each>
 </body>
 </html>

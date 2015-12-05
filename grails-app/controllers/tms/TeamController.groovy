@@ -17,15 +17,15 @@ class TeamController {
     }
 
     def createTeam(){
-        if(request.method == 'POST'){
-            String teamName = params.teamName
-            String teamId = params.teamId
-            boolean isComplete = false
-            Long teamPoolId = Long.valueOf(params.teamPoolId)
+        String teamName = params.teamName
+        String teamId = params.teamId
+        boolean isComplete = false
+        Long teamPoolId = Long.valueOf(params.teamPoolId)
+        TeamService.createTeam(teamName, isComplete, teamPoolId)
+        redirect(controller: "Home")
+    }
 
-            TeamService.createTeam(teamName, isComplete,teamPoolId)
-            redirect(controller: "Home")
-        }
+    def showCreateTeam(){
         def teamPoolListId = TeamPool.findAll()
         render(view: "createTeam" ,model: [teamPoolListId:teamPoolListId])
     }
@@ -36,30 +36,39 @@ class TeamController {
         StudentAccount studentAccount = params.studentAccount
     }
 
-
     def joinTeam() {
         String userId = session.user.id
         String teamId = params.teamId
-        TeamService.joinTeam( userId,  teamId)
-        redirect(view: "Home")
+
+        System.println("userId:  " + userId)
+        System.println("teamId:  " + teamId)
+
+        TeamService.joinTeam(userId, teamId)
+        redirect(controller: "Home")
     }
+
     def viewTeamListStudent()  {
         List<Team> teams = Team.findAll()
         Map model = [:]
         model.teams = teams
         render (view: "teamListStudent", model: model)
     }
+
     def viewParameters() {
-        render (view: "teamParameters")
+        TeamPool teamPool = TeamPool.get(params.teamPoolId as Long)
+        Map model = [:]
+        model.teamPool = teamPool
+        render (view: "teamParameters", model: model)
     }
 
     def setUpParameters() {
         redirect(controller: "Home")
     }
+
     def viewTeamListInstructor() {
-        List<Team> teams = Team.findAll()
+        List<TeamPool> teamPoolList = TeamPool.findAll()
         Map model = [:]
-        model.teams = teams
+        model.teamPoolList = teamPoolList
         render (view: "teamListInstructor", model: model)
     }
 
