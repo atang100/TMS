@@ -9,9 +9,9 @@
 
     <td>Student Names</td>
     <td>Accept</td>
-    <g:each in="${studentAccount}" var="studentAccount">
+    <g:each in="${studentAccount}" var="sAccount">
         <tr>
-            <td>${studentAccount.studentName}</td>
+            <td>${sAccount.username}</td>
             <td><g:form action="joinTeam" controller="Team"
                         name="Join Team" >
                 <g:submitButton name="submitButton" value="Accept" />

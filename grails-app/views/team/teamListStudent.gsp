@@ -17,7 +17,7 @@
             <td>${team.isComplete}</td>
             <td>${date}</td>
             <td><g:form action="joinTeam" controller="Team"
-                        name="Join Team" >
+                        name="Join Team">
                 <g:textField style = "display:none" name = "teamId" value = "${team.id}">  </g:textField>
                 <g:submitButton name="submitButton" value="Join Team" />
             </g:form></td>

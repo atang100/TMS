@@ -33,9 +33,10 @@ class TeamService {
     def joinTeam(String userId, String teamId) {
         StudentAccount studentAccount = UserAccount.get(userId);
 
-        Team team = Team.get(teamId);
+        Team team = Team.get(Long.valueOf(teamId));
 
         //code breaks here
+        //TeamPool teamPool = TeamPool.findByTeam(team)
         TeamPool teamPool = TeamPool.findByTeam(team)
 
 
