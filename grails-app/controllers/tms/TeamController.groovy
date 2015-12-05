@@ -41,7 +41,7 @@ class TeamController {
         String userId = session.user.id
         String teamId = params.teamId
         TeamService.joinTeam( userId,  teamId)
-        redirect(controller: "Home")
+        redirect(view: "Home")
     }
     def viewTeamInfo() {
         List<Team> teams = Team.findAll()
