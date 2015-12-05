@@ -5,7 +5,7 @@ class TeamController {
 
     def index() {
 
-        render (view:"teamList")
+        render (view:"teamListInstructor")
     }
 
 
@@ -43,11 +43,11 @@ class TeamController {
         TeamService.joinTeam( userId,  teamId)
         redirect(view: "Home")
     }
-    def viewTeamInfo() {
+    def viewTeamListStudent()  {
         List<Team> teams = Team.findAll()
         Map model = [:]
         model.teams = teams
-        render (view: "teamInfo", model: model)
+        render (view: "teamListStudent", model: model)
     }
     def viewParameters() {
         render (view: "teamParameters")
@@ -56,11 +56,11 @@ class TeamController {
     def setUpParameters() {
         redirect(controller: "Home")
     }
-    def viewTeamList() {
+    def viewTeamListInstructor() {
         List<Team> teams = Team.findAll()
         Map model = [:]
         model.teams = teams
-        render (view: "teamList", model: model)
+        render (view: "teamListInstructor", model: model)
     }
 
     def viewNewStudents() {

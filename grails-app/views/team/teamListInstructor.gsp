@@ -21,12 +21,6 @@
                 <td><g:form action="viewParameters" controller="Team"
                             name="Team Parameters" >
                     <g:textField style = "display:none" name = "teamId" value = "${team.id}">  </g:textField>
-                    <g:if test="${userType == 'Instructor'}">
-                        <g:render template="/home/instructorLayout" />
-                    </g:if>
-                    <g:else >
-                        <g:render template="/home/studentLayout" />
-                    </g:else>
                     <g:submitButton name="submitButton" value="Set Up Parameters" />
                 </g:form></td>
            </tr>

@@ -3,7 +3,7 @@
 </g:link>
 <br>
 
-<g:link  controller="Team" action="viewTeamList">
+<g:link  controller="Team" action="viewTeamListInstructor">
     View Team List
 </g:link>
 <br>

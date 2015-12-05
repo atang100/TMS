@@ -1,4 +1,4 @@
-<g:link  controller="Team" action="teamList">
+<g:link  controller="Team" action="viewTeamListStudent">
     View Team List
 </g:link>
 <br>
