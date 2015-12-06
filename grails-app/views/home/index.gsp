@@ -17,7 +17,7 @@
     <div class="jumbotron">
         <h1>Welcome to Home Page</h1>
 
-        <p>Do the shit you need to do.</p>
+        <p>TEAM MANAGEMENT SYSTEM</p>
     </div>
 </div>
 
