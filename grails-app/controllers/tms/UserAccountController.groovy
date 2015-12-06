@@ -44,7 +44,7 @@ class UserAccountController {
     }
 
     def showRegister(){
-        render(template: "register")
+        render(view: "register")
 
     }
 

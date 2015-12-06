@@ -11,9 +11,12 @@ class TeamController {
 
     //NEVER put stuff in parameters unless if private
     def acceptNewStudent(){
-        String  userId = params.userId
+        String userId = params.userId
         String teamId = params.teamId
 
+        TeamService.acceptNewStudent(userId, teamId)
+
+        redirect(action: "viewTeamListInstructor")
     }
 
     def createTeam(){
@@ -62,6 +65,12 @@ class TeamController {
     }
 
     def setUpParameters() {
+        String courseCode = params.courseCode
+        int min = params.minimum as int
+        int max = params.maximum as int
+        String teamPoolId = params.teamPoolId
+
+        TeamService.editTeamPoolParameter(courseCode, min, max, teamPoolId)
         redirect(controller: "Home")
     }
 
@@ -70,12 +79,5 @@ class TeamController {
         Map model = [:]
         model.teamPoolList = teamPoolList
         render (view: "teamListInstructor", model: model)
-    }
-
-    def viewNewStudents() {
-        List<StudentAccount> studentAccount = StudentAccount.findAll()
-        Map model = [:]
-        model.studentAccount = studentAccount
-        render (view: "acceptNewStudents", model: model)
     }
 }

@@ -8,11 +8,6 @@
 </g:link>
 <br>
 
-<g:link  controller="Team" action="viewNewStudents">
-    Accept New Students
-</g:link>
-<br>
-
 <g:link  controller="UserAccount" action="logout">
     logout
 </g:link>

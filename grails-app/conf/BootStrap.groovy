@@ -7,11 +7,14 @@ import tms.StudentAccount
 class BootStrap {
 
     def init = { servletContext ->
-        TeamPool teamPool = new TeamPool(courseCode:"CSI3131", maxStudent:5, minStudent:1, deadlineForTeamCreation:2015-01-10)
+        TeamPool teamPool1 = new TeamPool(courseCode:"CSI3131", maxStudent:5, minStudent:1, deadlineForTeamCreation:2015-01-10)
+
+        TeamPool teamPool2 = new TeamPool(courseCode:"CSI3131", maxStudent:5, minStudent:1, deadlineForTeamCreation:2015-01-10)
 
         Team team = new Team(teamName:"team", isComplete:true)
-        teamPool.addToTeam(team)
-        teamPool.save()
+        teamPool1.addToTeam(team)
+        teamPool1.save()
+        teamPool2.save()
 
         InstructorAccount instructorA = new InstructorAccount(username: "instructor", password: "instructor", firstName: "Name", lastName: "Last", emailAddress: "i@hotmail.com")
         instructorA.save()
